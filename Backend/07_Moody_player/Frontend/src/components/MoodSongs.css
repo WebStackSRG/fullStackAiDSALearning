@@ -261,7 +261,7 @@
     transition: transform 0.15s ease, background-color 0.15s ease;
 }
 
-.timeline-slider:hover:not(:disabled):::-webkit-slider-thumb {
+.timeline-slider:hover:not(:disabled)::-webkit-slider-thumb {
     transform: scale(1.25);
     background: #72c515;
 }
@@ -277,7 +277,7 @@
     transition: transform 0.15s ease, background-color 0.15s ease;
 }
 
-.timeline-slider:hover:not(:disabled):::-moz-range-thumb {
+.timeline-slider:hover:not(:disabled)::-moz-range-thumb {
     transform: scale(1.25);
     background: #72c515;
 }
