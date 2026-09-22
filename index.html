@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theme Switching Card | Light & Dark Mode</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Background decorative elements -->
+  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+
+  <main class="container">
+    <!-- Theme Showcase Card -->
+    <article class="theme-card" id="themeCard" aria-labelledby="cardTitle">
+      
+      <!-- Top banner & Theme Switcher -->
+      <header class="card-banner">
+        <span class="badge">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          Pro Member
+        </span>
+
+        <!-- Accessible Theme Toggle Switch -->
+        <button 
+          id="themeToggleBtn" 
+          class="theme-toggle" 
+          role="switch" 
+          aria-checked="false" 
+          aria-label="Toggle light and dark theme"
+          title="Switch theme"
+        >
+          <span class="toggle-track">
+            <!-- Sun Icon (Light Mode) -->
+            <svg class="toggle-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.41 1.41"></path>
+              <path d="m17.66 17.66 1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.34 17.66-1.41 1.41"></path>
+              <path d="m19.07 4.93-1.41 1.41"></path>
+            </svg>
+
+            <!-- Moon Icon (Dark Mode) -->
+            <svg class="toggle-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </svg>
+
+            <!-- Sliding Thumb / Indicator -->
+            <span class="toggle-thumb" aria-hidden="true"></span>
+          </span>
+        </button>
+      </header>
+
+      <!-- Profile Avatar & Identity -->
+      <section class="card-profile">
+        <div class="avatar-wrapper">
+          <div class="avatar-ring">
+            <img 
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=280&q=80" 
+              alt="Avatar of Sarah Jenkins" 
+              class="avatar-img"
+              loading="lazy"
+            >
+          </div>
+          <span class="status-indicator online" title="Online now" aria-label="Status: Online"></span>
+        </div>
+
+        <div class="profile-details">
+          <h1 id="cardTitle" class="profile-name">Sarah Jenkins</h1>
+          <p class="profile-role">Product Designer & Developer</p>
+          <p class="profile-bio">
+            Crafting fluid design systems and modern web experiences with CSS variable theming and accessible UI components.
+          </p>
+        </div>
+      </section>
+
+      <!-- Stats Grid -->
+      <section class="stats-grid" aria-label="Profile Statistics">
+        <div class="stat-card">
+          <span class="stat-value">128</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">14.2k</span>
+          <span class="stat-label">Followers</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">4.9 ★</span>
+          <span class="stat-label">Rating</span>
+        </div>
+      </section>
+
+      <!-- Theme Status Indicator & Tags -->
+      <section class="tags-section" aria-label="Tags and current mode">
+        <div class="tag theme-tag">
+          <span class="theme-mode-label" id="currentThemeLabel">☀️ Light Mode</span>
+        </div>
+        <span class="tag">UI/UX</span>
+        <span class="tag">Design System</span>
+        <span class="tag">CSS Variables</span>
+      </section>
+
+      <!-- Action Buttons -->
+      <footer class="card-actions">
+        <button class="btn btn-secondary" id="secondaryBtn">View Profile</button>
+        <button class="btn btn-primary" id="primaryBtn">Connect</button>
+      </footer>
+    </article>
+
+    <!-- Helper note for learning / demonstration -->
+    <aside class="helper-info" aria-label="Theme switching information">
+      <p>💡 <strong>How it works:</strong> Toggling the switch updates the <code>data-theme</code> attribute on <code>&lt;html&gt;</code>, which swaps CSS Custom Properties (variables) and persists your preference in <code>localStorage</code>. It also respects your OS <code>prefers-color-scheme</code>.</p>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
