@@ -52,7 +52,7 @@ async function loginController(req, res) {
     }
 
     // check password valid or not
-    const isPasswordValid = user.password === password
+    const isPasswordValid = await bcrypt.compare(password, user.password)
 
     // if password not valid send error
     if(!isPasswordValid){
@@ -72,7 +72,10 @@ async function loginController(req, res) {
     return res.status(200).json({
         success: true,
         message: 'User logged in successfully',
-        user
+        user:{
+            id:user._id,
+            username:user.username
+        }
     })
 }
 
